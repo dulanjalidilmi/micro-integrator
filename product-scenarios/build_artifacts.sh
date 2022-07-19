@@ -43,7 +43,7 @@ echo "git branch : ${GIT_BRANCH}"
 #generate uuid representing the test run
 UUID=$(uuidgen)
 
-git clone -b ${GIT_BRANCH} --single-branch https://github.com/wso2/micro-integrator.git
+git clone -b ${GIT_BRANCH} --single-branch https://github.com/dulanjalidilmi/micro-integrator.git
 cd ${INPUT_DIR}
 
 runTestProfile profile_artifacts

@@ -164,6 +164,11 @@ public class ScenarioTestBase {
      * @return properties the deployment properties
      */
     public static Properties getDeploymentProperties() {
+        log.info("getDeploymentProperties......");
+        log.info("INPUTS_LOCATION: " + INPUTS_LOCATION);
+        log.info("INFRASTRUCTURE_PROPERTIES: " + INFRASTRUCTURE_PROPERTIES);
+        log.info("DEPLOYMENT_PROPERTIES: " + DEPLOYMENT_PROPERTIES);
+        log.info("JOB_PROPERTIES: " + JOB_PROPERTIES);
         Path infraPropsFile = Paths.get(INPUTS_LOCATION + File.separator + INFRASTRUCTURE_PROPERTIES);
         Path deployPropsFile = Paths.get(INPUTS_LOCATION + File.separator + DEPLOYMENT_PROPERTIES);
         Path jobPropsFile = Paths.get(INPUTS_LOCATION + File.separator + JOB_PROPERTIES);
@@ -392,7 +397,10 @@ public class ScenarioTestBase {
     }
 
     public static synchronized void configureUrls() {
+        log.info("configureUrls.........");
+        log.info("infraProperties:  "  + infraProperties);
         if (null == infraProperties) {
+            log.info("infraProperties null.........");
             infraProperties = getDeploymentProperties();
             backendURL = infraProperties.getProperty(ScenarioConstants.CARBON_SERVER_URL)
                          + (infraProperties.getProperty(ScenarioConstants.CARBON_SERVER_URL).endsWith("/") ? "" : "/");
