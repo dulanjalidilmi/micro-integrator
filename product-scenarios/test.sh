@@ -120,6 +120,9 @@ if ! $PRODUCT_VERSION_FOUND ; then
     runTestProfile profile_general
 fi
 
+echo "sleep for 3600"
+sleep 3600
+
 MVNSTATE=$?
 
 #=============== Copy Surefire Reports ===========================================
